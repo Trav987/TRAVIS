@@ -1,8 +1,8 @@
-public class Weapon 
+public class Armor
 {
-	public int getDamage()
+	public int getDefense()
 	{
-		return damage;
+		return defense;
 	}
 	public String getName()
 	{
@@ -14,11 +14,6 @@ public class Weapon
 	}
 	public void examine()
 	{
-		
+		System.out.println();
 	}
 }
-
-
-
-
-

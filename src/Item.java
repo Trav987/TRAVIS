@@ -1,7 +1,5 @@
-
-public class Item {
-
-
+public class Item 
+{
 	public String getName()
 	{
 		return name;
@@ -14,6 +12,4 @@ public class Item {
 	{
 		
 	}
-
-
 }
