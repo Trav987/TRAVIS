@@ -1,4 +1,8 @@
 
-public class Weapon {
-
+public class Weapon
+{
+	public void weapon()
+	{
+		
+	}
 }
