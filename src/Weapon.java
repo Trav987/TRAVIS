@@ -1,4 +1,4 @@
-public class Weapon 
+public class Weapon extends Item
 {
 	public int getDamage()
 	{
@@ -14,7 +14,7 @@ public class Weapon
 	}
 	public void examine()
 	{
-		
+		super.examine();;
 	}
 }
 

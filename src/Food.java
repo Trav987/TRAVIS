@@ -16,12 +16,12 @@ public class Food
 	{
 		return weight;
 	}
-	publiv String getName()
+	public String getName()
 	{
 		return name;
 	}
 	public void examine()
 	{
-		
+		System.out.print();
 	}
 }

@@ -14,6 +14,6 @@ public class Armor
 	}
 	public void examine()
 	{
-		System.out.println();
+		System.out.print(name + weight + defense);
 	}
 }
