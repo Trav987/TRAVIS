@@ -1,5 +1,9 @@
 public class Armor
 {
+	private String name;
+	private int defense;
+	private int weight;
+	
 	public int getDefense()
 	{
 		return defense;
@@ -14,6 +18,8 @@ public class Armor
 	}
 	public void examine()
 	{
-		System.out.print(name + weight + defense);
+		System.out.print("Name: " + name + 
+				"\n" + "Weight: " + weight 
+				+ "\n" + "Defense: " + defense);
 	}
 }

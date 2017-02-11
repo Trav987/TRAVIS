@@ -3,7 +3,10 @@ public class Item
 	private String name; 
 	private int weight;
 	
-	
+	public void setName()
+	{
+	this.name = "Travis";
+	}
 	public String getName()
 	{
 		
