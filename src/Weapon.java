@@ -1,5 +1,9 @@
-public class Weapon extends Item
+public class Weapon
 {
+	private int damage;
+	private String name;
+	private int weight;
+	
 	public int getDamage()
 	{
 		return damage;
@@ -14,7 +18,9 @@ public class Weapon extends Item
 	}
 	public void examine()
 	{
-		super.examine();;
+		System.out.println("Name: " + name + 
+				"\n" + "Weight: " + weight 
+				+ "\n" + "Damage: " + damage);
 	}
 }
 
