@@ -19,9 +19,8 @@ public class Recursive
 		
 		double error = 0;
 		error = error/2;
-		error = recursive(30);
-		
-		System.out.print(error);
+		recursive(error);
+		System.out.print(recursive(20));
 		
 		
 	}
