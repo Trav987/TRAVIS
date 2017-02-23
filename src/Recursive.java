@@ -16,7 +16,7 @@ public class Recursive
 	
 	public static void main (String [] args)
 	{
-		//Start
+		
 		double error = 0;
 		error = error/2;
 		error = recursive(30);
