@@ -1,9 +1,10 @@
 
 public class Recursive 
 {
-	
+	//Constructor used for finding the square root
 	public static double recursive(double x)
 	{ 
+		//recursive if statement that inputs the given number
 		
 		if (x==0)
 			 return 1;
@@ -11,7 +12,7 @@ public class Recursive
 		
 		
 	}
-	//Comment
+	//Main method argument that gives the program its value
 	public static void main (String [] args)
 	{
 		double error = 0;
@@ -20,7 +21,5 @@ public class Recursive
 		System.out.print(recursive(20));
 		
 	}
-	//comment
 
-	
 }
