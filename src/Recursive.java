@@ -8,20 +8,19 @@ public class Recursive
 		if (x==0)
 			 return 1;
 		return 0.5*(recursive(x-1) + x/recursive(x-1));
-		//new
 		
-	 
 		
 	}
-	
+	//Comment
 	public static void main (String [] args)
 	{
-		
 		double error = 0;
 		error = error/2;
 		recursive(error);
 		System.out.print(recursive(20));
 		
-		
 	}
+	//comment
+
+	
 }
