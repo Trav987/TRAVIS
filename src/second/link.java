@@ -22,45 +22,45 @@ public class link
 	public void addAtStart(String n)
 	{
 		System.out.println("This is letter: " + n );
-		Node np = new Node(n, null, null);
+		Node temp = new Node(n, null, null);
 		if (root == null)
 		{
-			root = np;
+			root = temp;
 			tail = root;
 		}
 		else
 		{
-			root.setPrev(np);
-			np.setNext(root);
-			root = np;
+			root.setPrev(temp);
+			temp.setNext(root);
+			root = temp;
 		}
 		if(isEmpty())
 		{
-			root = np;
+			root = temp;
 		
 		}
 		
 			size++;
-
 	}
-	/*public Node addAtEnd(String data)
+	public void addAtEnd(String n)
 	{
-		System.out.println("This is letter: " + data + "End" );
-		Node n = new Node(data);
-		if(size == 0)
+		System.out.println("This is letter: " + n + "End" );
+		Node temp = new Node(n, null, null);
+		if(size >= 0)
 		{
-			root = n;
-			tail = n;
+			root = temp;
+			tail = temp;
 		}
 		else
 		{
-			tail.getNext() = n;
-			n.getPrev() = tail;
-			tail = n;
+			temp.setPrev(tail);
+			tail.setNext(temp);
+			tail = temp;
 		}
-		size++
-		return n;
-	}*/
+		size++;
+	
+	}
+	
 	
 	public int getSize()
 	{
