@@ -3,12 +3,13 @@ package second;
 public class link 
 {
 	private int size = 0;
-	private Node root = null;
-	private Node tail = null;
+	private Node root;
+	private Node tail;
 	
 	public link()
 	{
-		root = null;
+		this.root = null;
+		this.tail = null;
 	}
 	
 	public boolean isEmpty()
@@ -22,25 +23,16 @@ public class link
 	public void addAtStart(String n)
 	{
 		System.out.println("This is letter: " + n );
-		Node temp = new Node(n, null, null);
-		if (root == null)
+		//Node temp = new Node(n, null, null);
+		if (isEmpty())
 		{
-			root = temp;
-			tail = root;
+			tail = new Node(n, null, null);
 		}
 		else
 		{
-			root.setPrev(temp);
-			temp.setNext(root);
-			root = temp;
+			
+			tail = tail.getNext();
 		}
-		if(isEmpty())
-		{
-			root = temp;
-		
-		}
-		
-			size++;
 	}
 	public void addAtEnd(String n)
 	{
