@@ -26,22 +26,23 @@ public class link
 		//Node temp = new Node(n, null, null);
 		if (isEmpty())
 		{
-			tail = new Node(n, null, null);
+			tail = new Node(n);
+			root = tail;
 		}
 		else
 		{
-			
+			tail = new Node(n,null, tail);
 			tail = tail.getNext();
+			
 		}
 	}
-	public void addAtEnd(String n)
+	public void addAtStart(int index, String n)
 	{
-		System.out.println("This is letter: " + n + "End" );
-		Node temp = new Node(n, null, null);
-		if(size >= 0)
+		System.out.println("This is letter: " + n );
+		Node temp = new Node(n);
+		if(index > this.getSize())
 		{
-			root = temp;
-			tail = temp;
+			System.out.println("Index " + index + "false");
 		}
 		else
 		{

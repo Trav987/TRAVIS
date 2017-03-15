@@ -5,6 +5,7 @@ public class main
 	public static void main(String[] args)
 	{
 		link d = new link();
-		d.addAtStart("A");
+		d.addAtStart("Apple");
+		d.addAtStart("Travis");
 	}
 }

@@ -14,6 +14,10 @@ public class Node
 			next = t;
 			prev = p;
 		}
+		public Node(String n)
+		{
+			this(n, null, null);
+		}
 		 
 		 public Node getNext() 
 		 {
