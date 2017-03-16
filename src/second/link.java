@@ -13,14 +13,12 @@ public class link
 	}
 	public int getSize()
 	{
+		
 		return this.size;
 	}
 	public boolean isEmpty()
 	{
-		if(root == null)
-			return false;
-		else
-			return true;
+		return root == null;
 	}
 	public void print() 
 	{
@@ -37,71 +35,86 @@ public class link
 	        tmp = tmp.getNext();
 	      }
 	      
-	      System.out.println("");
+	      System.out.println(" ");
 	    }
 	  }
 	
-	public void addAtStart(String n)
+	public void add(String n)
 	{
-		System.out.println("This is: " + n );
-		//Node temp = new Node(n, null, null);
+		//System.out.println("This is: " + n );
+		//Node t = new Node(n, null, null);
 		if (isEmpty())
 		{
 			tail = new Node(n);
 			root = tail;
 		}
 		else
-		{
+		{	
 			tail = new Node(n,null, tail);
+			tail.setNext(tail);
 			tail = tail.getNext();
-			
+			//.out.println(tail);
 		}
 		this.size++;
 	}
-	public void addAtStart(int index, String n)
+	public void add(int index, String n)
 	{
-		System.out.println("This is: " + n );
+		
 		Node temp = new Node(n);
 		if(index < 0||index > this.getSize())
 		{
-			System.out.println("Index " + index + " false");
+			System.out.println("This index " + index + " does not exisit");
 		}
-		else
+		
+		else if(this.isEmpty())
 		{
-			if(this.isEmpty())
-			{
-				this.root = temp;
-			}
-			else if (index == 0)
-			{
-				Node prev = root;
-				root = new Node(n, prev, null);
-				if(prev != null)
-					temp.setPrev(root);
-				if(tail == null)
-					this.tail = root;
-				return;
-			}
-			else if(index == this.getSize())
-			{
-				Node curr = this.root;
-				while(temp.getNext() != null)
-				{
-				curr = curr.getNext();
-				}
-				temp.setNext(root);
-			}
-			else
-			{
-				Node curr = this.root;
-				for(int i =0; i< index -1; i++)
-				{
-					curr = curr.getNext();
-				}
-				root.setNext(curr.getNext());
-				curr.setNext(root);
-			}
+			this.root = temp;
 		}
+		
+		if(index == 0)
+		{
+			//System.out.println(root);
+			Node head = root;
+			root = new Node(n, head, null);
+			if(head != null)
+				head.setPrev(root.getNext());
+			if(tail == null)
+				this.tail = root;
+			return;
+		}
+		/*else if(index == this.getSize())
+		{
+			//System.out.println(root);
+			Node current = this.root;
+			while(root.getNext() != null)
+			{
+			current = current.getNext();
+			}
+			current.setNext(root);
+			}*/
+		else{
+			
+				Node current = this.root;
+				for(int i = 1; i< index - 1; i++)
+				{
+					root = current.getNext();
+					System.out.println(root);
+				}
+				
+				Node succ = current.getNext();
+				Node middle = new Node(n, succ, current);
+				middle.setPrev(current.getNext());
+				//System.out.println(tail);
+				if(succ == null)
+					tail = middle;
+				else
+					middle.setNext(succ.getNext());
+				
+				/*root.setNext(curr.getNext());
+				curr.setNext(root);*/
+			
+			}
+
 		this.size++;
 	
 	}
