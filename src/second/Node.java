@@ -45,4 +45,9 @@ public class Node
 		 {
 		  this.name = n;
 		 }
+		public void print() 
+		{
+			System.out.print(this.name + " ");
+			
+		}
 }
