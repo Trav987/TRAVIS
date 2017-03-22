@@ -11,15 +11,18 @@ public class link
 		this.root = null;
 		this.tail = null;
 	}
+	
 	public int getSize()
 	{
 		
 		return this.size;
 	}
+	
 	public boolean isEmpty()
 	{
 		return root == null;
 	}
+	
 	public void print() 
 	{
 	    if (this.isEmpty()) 
@@ -32,6 +35,7 @@ public class link
 	      while (tmp != null) 
 	      {
 	        tmp.print();
+	        System.out.println();
 	        tmp = tmp.getNext();
 	      }
 	      
@@ -41,8 +45,7 @@ public class link
 	
 	public void add(String n)
 	{
-		//System.out.println("This is: " + n );
-		//Node t = new Node(n, null, null);
+		
 		if (isEmpty())
 		{
 			tail = new Node(n);
@@ -50,74 +53,62 @@ public class link
 		}
 		else
 		{	
-			tail = new Node(n,null, tail);
-			tail.setNext(tail);
+			
+			root = new Node(n,root, null);
+			
+			while(tail != null)
+			{
+			root.setNext(tail);
 			tail = tail.getNext();
-			//.out.println(tail);
+			}
+			
+	
 		}
 		this.size++;
 	}
-	public void add(int index, String n)
+	
+	public void insert(String n)
 	{
-		
-		Node temp = new Node(n);
-		if(index < 0||index > this.getSize())
+		Node str = new Node(n);
+		if(isEmpty())
 		{
-			System.out.println("This index " + index + " does not exisit");
+			root = new Node(n);
+			tail = new Node(n);
 		}
-		
-		else if(this.isEmpty())
+		else if(str.getName().compareTo(root.getName()) < 0)
 		{
-			this.root = temp;
+			Node temp = root;
+			root = str;
+			root.setNext(temp);
+			temp.setPrev(root);
 		}
+		else if(str.getName().compareTo(tail.getName()) > 0)
+		{
+			
+			Node temp = tail;
+			tail = str;
+			tail.setPrev(temp);
+			temp.setNext(tail);
 		
-		if(index == 0)
-		{
-			//System.out.println(root);
-			Node head = root;
-			root = new Node(n, head, null);
-			if(head != null)
-				head.setPrev(root.getNext());
-			if(tail == null)
-				this.tail = root;
-			return;
 		}
-		/*else if(index == this.getSize())
+		else
 		{
-			//System.out.println(root);
-			Node current = this.root;
-			while(root.getNext() != null)
+			
+			Node temp = root;
+			while(str.getName().compareTo(temp.getName()) < 0)
 			{
-			current = current.getNext();
+				temp = temp.getNext();
 			}
-			current.setNext(root);
-			}*/
-		else{
+			str.setNext(temp.getNext());
+			str.setPrev(temp);
+			temp.setNext(str);
+			str.setNext(str.getPrev());
 			
-				Node current = this.root;
-				for(int i = 1; i< index - 1; i++)
-				{
-					root = current.getNext();
-					System.out.println(root);
-				}
-				
-				Node succ = current.getNext();
-				Node middle = new Node(n, succ, current);
-				middle.setPrev(current.getNext());
-				//System.out.println(tail);
-				if(succ == null)
-					tail = middle;
-				else
-					middle.setNext(succ.getNext());
-				
-				/*root.setNext(curr.getNext());
-				curr.setNext(root);*/
-			
-			}
-
-		this.size++;
+		}
+		
 	
 	}
+	
 	
 	
 	

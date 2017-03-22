@@ -1,6 +1,7 @@
 
 public class Recursive 
 {
+	
 	//Constructor used for finding the square root
 	public static double recursive(double x)
 	{ 
@@ -15,10 +16,8 @@ public class Recursive
 	//Main method argument that gives the program its value
 	public static void main (String [] args)
 	{
-		double error = 0;
-		error = error/2;
-		recursive(error);
-		System.out.print(recursive(20));
+		
+		System.out.print(recursive(30));
 		
 	}
 
