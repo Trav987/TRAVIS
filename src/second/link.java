@@ -1,5 +1,7 @@
 package second;
 
+import lab05.Node1;
+
 public class link 
 {
 	private int size = 0;
@@ -43,71 +45,73 @@ public class link
 	    }
 	  }
 	
-	public void add(String n)
-	{
-		
-		if (isEmpty())
-		{
-			tail = new Node(n);
-			root = tail;
-		}
-		else
-		{	
-			
-			root = new Node(n,root, null);
-			
-			while(tail != null)
-			{
-			root.setNext(tail);
-			tail = tail.getNext();
-			}
-			
 	
-		}
-		this.size++;
-	}
 	
 	public void insert(String n)
 	{
-		Node str = new Node(n);
+		
+		Node newNode = new Node(n);
 		if(isEmpty())
 		{
-			root = new Node(n);
-			tail = new Node(n);
+			root = newNode;
+			tail = newNode;
 		}
-		else if(str.getName().compareTo(root.getName()) < 0)
+		else if(newNode.getName().compareTo(root.getName()) < 0)
 		{
-			Node temp = root;
-			root = str;
+			Node temp = this.root;
+			root = newNode;
 			root.setNext(temp);
 			temp.setPrev(root);
+			//System.out.println(n);
 		}
-		else if(str.getName().compareTo(tail.getName()) > 0)
+		else if(newNode.getName().compareTo(tail.getName()) > 0)
 		{
 			
-			Node temp = tail;
-			tail = str;
+			Node temp = this.tail;
+			tail = newNode;
 			tail.setPrev(temp);
 			temp.setNext(tail);
-		
 		}
-		else
+		else //if(newNode.getName().compareTo(root.getName()) > 0 && newNode.getName().compareTo(tail.getName()) < 0)
 		{
-			
-			Node temp = root;
-			while(str.getName().compareTo(temp.getName()) < 0)
+			Node temp = this.root;
+			while(newNode.getName().compareTo(temp.getNext().getName()) >= 0)
 			{
 				temp = temp.getNext();
 			}
-			str.setNext(temp.getNext());
-			str.setPrev(temp);
-			temp.setNext(str);
-			str.setNext(str.getPrev());
-			
+			newNode.setNext(temp.getNext());
+			newNode.setPrev(temp);
+			temp.getNext().setPrev(newNode);
+			temp.setNext(newNode);
 		}
 		
-	
+	this.size++;
 	}
+	
+	 public boolean findNode(Node node)
+	 {
+		 //Node currentNode = new Node(n);
+		
+	        if( node == null) 
+	        {
+	        	System.out.println(node);
+	        	System.out.println("Null");
+	        	return false;
+	        }
+	        Node currentNode = root;
+	        while(currentNode.getNext() != node)
+	        {
+	            currentNode = currentNode.getNext();
+	            if(currentNode == null)
+	            {
+	            	System.out.print("Doesn't exist.");
+	            }
+	            return false;
+	            
+	        }
+	        System.out.println("Exist." + node);
+	        return true;
+	    }
 	
 	
 	
