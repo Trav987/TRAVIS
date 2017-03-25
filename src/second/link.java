@@ -1,6 +1,6 @@
 package second;
 
-import lab05.Node1;
+
 
 public class link 
 {
@@ -88,30 +88,42 @@ public class link
 	this.size++;
 	}
 	
-	 public boolean findNode(Node node)
+	 public void findNode(String n)
 	 {
-		 //Node currentNode = new Node(n);
-		
-	        if( node == null) 
+	        if( n == null) 
 	        {
-	        	System.out.println(node);
-	        	System.out.println("Null");
-	        	return false;
+	        	
+	        	System.out.println("Is null");
+	        	
 	        }
-	        Node currentNode = root;
-	        while(currentNode.getNext() != node)
-	        {
-	            currentNode = currentNode.getNext();
-	            if(currentNode == null)
+	        Node temp = root;
+	        while(temp.getName() != n)
+	        {     
+	        	temp = temp.getNext();
+	        	
+	            if(temp == null)
 	            {
-	            	System.out.print("Doesn't exist.");
+	            	System.out.println("The name " + n + " doesn't exist.");
 	            }
-	            return false;
-	            
 	        }
-	        System.out.println("Exist." + node);
-	        return true;
+	        System.out.println("The name " + n +" exist ");
 	    }
+	 
+	 public void remove()
+	 {
+		   
+		   	if(root == null)
+		   	{
+		   		throw new RuntimeException("The list is empty.");
+		   	}
+	    	else
+	    	{		
+	    		root = root.getNext();
+	    	}
+		    this.size--;
+		    
+	 }
+	 
 	
 	
 	
