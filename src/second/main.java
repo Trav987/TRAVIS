@@ -8,6 +8,8 @@ public class main
 	{
 		link dl = new link();
 		
+		System.out.println("This method prints forward, "
+				+ "in alphabetical order:\n");
 		
 		dl.insert("Bob");
 		dl.insert("Amy");
@@ -16,22 +18,25 @@ public class main
 		dl.insert("Dee");
 		dl.print();
 		
-		//dl.iterate();
-		dl.remove();
+		System.out.println("This method prints backwards:\n");
+		
+		dl.back();
+		
+		System.out.println("");
+		System.out.println("This method removes node:\n");
+		
 		dl.remove();
 		dl.print();
 		
-		//dl.findNode("Bob");
-		//dl.findNode("Ted");
-		//dl.findNode("Bill");
+		System.out.println("This method find node:\n");
+		dl.findNode("Amy");
+		dl.findNode("Ted");
+		dl.findNode("Bill");
 		
-			
-	
+		System.out.println("\nThis method destroyed the list:\n");
+		dl.deleteList();
 		
-		/*if(dl.findNode("Al").getName())
-		{
-			System.out.print("Here.");
-		}*/
+		dl.findNode("Dee");
 		
 	
 		

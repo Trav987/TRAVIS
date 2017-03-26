@@ -62,7 +62,7 @@ public class link
 			root = newNode;
 			root.setNext(temp);
 			temp.setPrev(root);
-			//System.out.println(n);
+			
 		}
 		else if(newNode.getName().compareTo(tail.getName()) > 0)
 		{
@@ -71,8 +71,9 @@ public class link
 			tail = newNode;
 			tail.setPrev(temp);
 			temp.setNext(tail);
+			
 		}
-		else //if(newNode.getName().compareTo(root.getName()) > 0 && newNode.getName().compareTo(tail.getName()) < 0)
+		else 
 		{
 			Node temp = this.root;
 			while(newNode.getName().compareTo(temp.getNext().getName()) >= 0)
@@ -93,7 +94,7 @@ public class link
 	        if( n == null) 
 	        {
 	        	
-	        	System.out.println("Is null");
+	        	throw new RuntimeException("The list is empty.");
 	        	
 	        }
 	        Node temp = root;
@@ -104,6 +105,7 @@ public class link
 	            if(temp == null)
 	            {
 	            	System.out.println("The name " + n + " doesn't exist.");
+	            	return;
 	            }
 	        }
 	        System.out.println("The name " + n +" exist ");
@@ -122,6 +124,55 @@ public class link
 	    	}
 		    this.size--;
 		    
+	 }
+	 
+	 public void back()
+	 {
+		
+		 if(root == null)
+		 {
+			 throw new RuntimeException("The list is empty.");
+		 }
+		 
+		 else 
+		 {
+			 Node newNode = root;
+			 
+			 root = tail;
+			 
+			 tail = newNode;
+			
+			System.out.println(root.getName());
+			 
+				 while( root != tail)
+				 {
+				
+					 root = root.getPrev();
+					 System.out.println(root.getName()); 
+				 }
+			 
+			
+			 
+		 }
+		 this.size++;
+	
+	 }
+	 
+	 public void deleteList()
+	 {
+		 if(root == null)
+		   	{
+		   		throw new RuntimeException("The list is empty.");
+		   	}
+	    	else
+	    	{		
+	    		while(root != null)
+	    		{
+	    			root = root.getNext();
+	    			
+	    		}
+	    	}
+		    this.size--; 
 	 }
 	 
 	
