@@ -36,7 +36,7 @@ public class main
 		System.out.println("\nThis method destroyed the list:\n");
 		dl.deleteList();
 		
-		dl.findNode("Dee");
+		//dl.findNode("Dee");
 		
 	
 		

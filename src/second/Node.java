@@ -18,7 +18,7 @@ public class Node
 		{
 			this(n, null, null);
 		}
-		 
+		 //sets the next name
 		 public Node getNext() 
 		 {
 		  return next;
@@ -28,6 +28,8 @@ public class Node
 		 {
 		  this.next = t;
 		 }
+		 
+		 //sets previous name
 		 public Node getPrev()
 		 {
 			 return prev;
@@ -36,6 +38,7 @@ public class Node
 		 {
 			 this.prev = p;
 		 }
+		 //sets the current name
 		 public String getName()
 		 {
 		  return name;
@@ -45,6 +48,7 @@ public class Node
 		 {
 		  this.name = n;
 		 }
+		 //prints the name
 		public void print() 
 		{
 			System.out.print(this.name + " ");
