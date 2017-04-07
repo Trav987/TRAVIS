@@ -23,7 +23,7 @@ Node current;
 		}
 	}
 	
-	public String pop()
+	public String dequeue()
 	{
 		if(current == null)
 		{
@@ -33,7 +33,7 @@ Node current;
 		else
 		{
 			String temp = current.getName();
-			current = current.getPrev();
+			current = current.getNext();
 			return temp;
 					
 		}

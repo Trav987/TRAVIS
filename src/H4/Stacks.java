@@ -16,7 +16,14 @@ public class Stacks
 		{
 			current = newNode.getPrev();
 			current = newNode;
+			
+			
+			//push(new String());
+			
 		}
+		
+		System.out.println("Push(" + x + ")");
+		
 	}
 	
 	public String pop()
@@ -29,9 +36,16 @@ public class Stacks
 		else
 		{
 			String temp = current.getName();
+			while(current.getPrev()!= null)
+			{
 			current = current.getPrev();
+			}
+			System.out.println("Pop: " + temp);
 			return temp;
 					
 		}
+		
 	}
+
+	
 }
