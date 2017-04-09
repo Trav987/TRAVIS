@@ -40,7 +40,7 @@ public class Stacks
 			{
 			current = current.getPrev();
 			}
-			System.out.println("Pop: " + temp);
+			//System.out.println("Pop: " + temp);
 			return temp;
 					
 		}
