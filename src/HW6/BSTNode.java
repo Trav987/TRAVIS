@@ -4,17 +4,17 @@ package HW6;
 public class BSTNode
 {
 	  BSTNode left, right;
-	    int data;
+	    String data;
 	 
 
 	    public BSTNode()
 	    {
 	        left = null;
 	        right = null;
-	        data = 0;
+	        data = null;
 	    }
 
-	    public BSTNode(int n)
+	    public BSTNode(String n)
 	    {
 	        left = null;
 	        right = null;
@@ -41,12 +41,12 @@ public class BSTNode
 	        return right;
 	    }
 
-	    public void setData(int d)
+	    public void setData(String d)
 	    {
 	        data = d;
 	    }
 
-	    public int getData()
+	    public String getData()
 	    {
 	        return data;
 	    }     
