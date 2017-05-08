@@ -1,6 +1,6 @@
 package HW6;
 
-import java.util.Scanner;
+
 public class BST
 {
 	private  BSTNode root;
@@ -60,9 +60,10 @@ public class BST
     		}
     	}
     }
-    public void inorder()
+    public String [] inorder()
     {
         inorder(root);
+		return null;
     }
    
     private void inorder(BSTNode r)
@@ -96,28 +97,29 @@ public class BST
     
 
     public static void main(String[] args) {
-        BST bstInstance = new BST();  
-       bstInstance.setRoot("I");
+        BST bst = new BST();  
+       bst.setRoot("I");
       
        System.out.println("Building tree with root data");
-      // bstInstance.insert("I");
-       bstInstance.insert("have");
-       bstInstance.insert("to");
-       bstInstance.insert("go");
-       bstInstance.insert("to");
-       bstInstance.insert("the");
-       bstInstance.insert("store");
+      
+       bst.insert("have");
+       bst.insert("to");
+       bst.insert("go");
+       bst.insert("to");
+       bst.insert("the");
+       bst.insert("store");
        
         System.out.println("Traversing tree in order");
-        bstInstance.inorder();
+       bst.inorder();
         
         
         System.out.println();
         
-        if(bstInstance.search(root.getData(), " "))
-       	{
-        	
-   		}
-        
+       if(bst.search(bst.getRoot(), "") !=null )
+       {
+    	   System.out.println("true");
+       }
+     
+      
     }
 }
