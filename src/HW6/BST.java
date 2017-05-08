@@ -1,9 +1,9 @@
 package HW6;
 
-
+import java.util.Scanner;
 public class BST
 {
-	private BSTNode root;
+	private  BSTNode root;
 	
 	public BST()
     {
@@ -32,7 +32,9 @@ public class BST
 
     private void insert(BSTNode node, String data)
     {
-       //Implement This Function!!!!!!
+      
+    	
+    	//Implement This Function!!!!!!
     	if(data.compareTo(node.getData()) < 0)
     	{
     		if(node.left != null)
@@ -73,42 +75,49 @@ public class BST
             inorder(r.getRight());
         }
     }
-   /* public void find(String id)
+   public BSTNode search(BSTNode root, String id)
     {
-    	BSTNode current = root;
-    	while(current!=null)
+    	if(root == null)
     	{
-    		if(current.getData()== id)
-    		{
-    			return;
-    		}
-    		else if(current.getData()>id)
-    		{
-    			current = current.getLeft();
-    		}
-    		else
-    		{
-    			current = current.getRight();
-    		}
-    		return false;
+    		return null;
     	}
-    }*/
+    	else if(id.equals(root.getString()))
+    	{
+    		return root;
+    	}
+    	else
+    	{
+    		if(root.getLeft() != null)
+    			return search(root.getLeft(), id);
+    		else
+    			return search(root.getRight(), id);
+    	}
+    }
+    
+
     public static void main(String[] args) {
         BST bstInstance = new BST();  
-        bstInstance.setRoot("This sentence repeats");
+       bstInstance.setRoot("I");
       
-        System.out.println("Building tree with root data " + bstInstance.getRoot().getData());
-      //  bstInstance.insert("This");
-       // bstInstance.insert("sentence");
-       // bstInstance.insert("repeats");
-        //bstInstance.insert(3);
-        //bstInstance.insert(9);
-        //bstInstance.insert(12);
-        //bstInstance.insert(11);
-        //bstInstance.insert(15);
+       System.out.println("Building tree with root data");
+      // bstInstance.insert("I");
+       bstInstance.insert("have");
+       bstInstance.insert("to");
+       bstInstance.insert("go");
+       bstInstance.insert("to");
+       bstInstance.insert("the");
+       bstInstance.insert("store");
+       
         System.out.println("Traversing tree in order");
         bstInstance.inorder();
+        
+        
         System.out.println();
+        
+        if(bstInstance.search(root.getData(), " "))
+       	{
+        	
+   		}
         
     }
 }

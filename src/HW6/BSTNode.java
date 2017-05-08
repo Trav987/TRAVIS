@@ -4,14 +4,15 @@ package HW6;
 public class BSTNode
 {
 	  BSTNode left, right;
-	    String data;
-	 
+	  String data, str;
+	  int freq;
 
 	    public BSTNode()
 	    {
 	        left = null;
 	        right = null;
 	        data = null;
+	        str = null;
 	    }
 
 	    public BSTNode(String n)
@@ -49,6 +50,36 @@ public class BSTNode
 	    public String getData()
 	    {
 	        return data;
-	    }     
+	    }  
+	    public void setString(String s)
+	    {
+	    	str = s;
+	    }
+	    public String getString()
+        {
+            return str;
+        }
+	    public void upFreq()
+	    {
+	    	freq = freq + 1;
+	    }
+	    public int getFreq()
+	    {
+	    	return freq;
+	    }
+	    public static int countNodes( BSTNode root ) {
+	        if ( root == null ){
+	            // The tree is empty.  It contains no nodes.
+	            return 0;  
+	                }else {
+	            // Start by counting the root.
+	            int count = 1;   
+	            // Add the number of nodes in the left subtree.
+	            count += countNodes(root.left);
+	            // Add the number of nodes in the right subtree.
+	            count += countNodes(root.right); 
+	            return count;  // Return the total.
+	        }
+	    }
 
 }
